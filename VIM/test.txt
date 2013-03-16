@@ -1,0 +1,137 @@
+Thanks to Bram Moolenaar for creating Vim and to all those who have contributed to its development.It's a timeless piece of software ,and I look forward to growing with it.
+Thanks to evenyone at the Pragmatic Bookshelf for working together to make this booke the best that it could be. Special thanks to Kay Keppler,my developmental editor,or couaching me as writer and for helping to shape this book,despite its growing pains and my occasional tantrums.I'd also like to thank David kelly for his adept handling of my unusual formatting requests. 
+Prcatical Vim didn'tstart out as a recipe book,but Susanash Pfalzer recognized that it would work best in this format. It was painful to have to rewrite so much,but in doing so I produce 
+but in doing so I produced a draft that I was happy with for the first time.Susannah knows what's best,ad I thank he for sharing that insight.
+THanks to Dave Thomas and Andy Hunt for creating the Pragmatic Bookshelf.I would,'t want to be represented by any other publisher, and I'm honored to be listed anlongside the other titles in their catalog. 
+Practical Vim wouldn't have benn possible without my technical reviewers.Each of you contributed something and helped to shape the book.I'd like to thank Adam McCrea,Alan Grardner,Alex Khan,Ali Alwasity,Andes Janmyr,Andrew Donaldson,Angus Neil, Charlie Tanksley,ChesMartin,Daniel Bretoi,David Morris,Denis Gorin,Elyezer Mendes Rezende,Erik St,Martin,Fedderco,Galassi,Felix Gersendorfer,Floriar Vallen,Graeme Mathieson,Hans Hasselberg,Henrik Nyh,Javier Collado,Jeff Holland,Josh Sullivan.Josh Sullivan,Joshuaberg,Henrik Nyh,Javier Collado,Jeff Holland,Josh Sullivan,Joshua Flanagan,Kana Natsuno,Kennt Frazier,lusi Merino, Mathias Meyer,Matt Southerden,Mislav Marohnic,Mitch Guthrie,Mogan prior,Paul Barry,Perter Aronoff, Perter Rihn,Philip Robert, Robert Evans,Ryan Stenhouse,Steven!Ragnarok,Tibor Simic,Time Chase,Time Pope,Tim Tyrrell,and Tobas Sailer. As a whole,I'd linke to tank the Vim community for sharing therir insights across the Internet.I learned many ofr the tips in this book by reading the Vimtag on StackOverflow and by follwing the vim use mailing list.Tim Pope's rails.vim plugin was instrumental in vonvincing me to tak Vim seriously,and many of his oter plugins have become essential parts ofr my stup.I've also gained insight by using the plugins of Kana Natsuno,whose custom text objects are some of the best extensions to Vim's core functionality that I've some across. Thank you to both for sharpening the saw so that the rest pf us can benfit.
+Thanks to Joe Rozner for providing the wake up source code the I used to introduce te :make comand.Thanks to Oleg Efimove for has quick response to nodelint issurs Thanks to Ben Cormack for illustrating the robots and ninjas 
+In January 2010,we moved to Berlin. wherer the tech community inspired me to complete this book.I'd link to thank Gregor Schmidt for founding the Vim Berlin user group and Jan Schulz-Hofen for hosting our meetups.The opportunity to speak to fellow Vim users really helped me to get my thoughts in oerde
+thank you to Daniel andNana Holle for subletting your home to us.It wa a wonderful place to live and a productive envirnoment in which to work.
+In March 2011, Inneded surgery to clear adhesions that were obstructing my bowel.Unlunky for me,I was a long way frome home.Luckily,my wife was by my side.Hannah had me addmitted to the South Sinai hospital ,where I received excellent care.i want to thank all of the staff there for their kind help, and Dr.shawkey Gerges for successfully operating one me.
+When my mun learned that I required surgery, she dropped everything and was on the next flight to Egypt.Considering that the country was ing revolution.ite took enormous courage to do so.I can't imagine how Hannah and I would have got through that difficult time without the suport and experience that my mum brought. I conside myself blessed to have to such wonderful women in my life.Conventional wisdom dictates that Vim has a steep learning curve. I think most Vim users would disagree. Sure, htere's an initial hump.but once tou run through vimtutor and learn the basics of what to put in your vimrc, you reach a poingt where you can actually get work done ！！a sort of hobbled productivity.
+what omes next? The Internt's answer to this is the "tip" ！！a recipe for solving a specific problem.You might search for specific tips when your current solution to a problem feels suboptimal, or you might proactively read soeme of the more popular tips. This strategy works ！！it's how I learned,after all！！but it's slow.Learning that * searches for the word under the cursor is helpful,but it hardly helps you think like a Vim master.
+you can understand my skepticism,the,when I found out Practical Vim was using a tips format.How could a couple of hundred tips accomplish what took me thousands? A few pages in I realized my definition of "tips" was narrow-minded.In contrast to the problem/solution pattern I had expected,Practical Vim tips teach lessons in thinking link a proficient Vim user.In a sense, they are more lik parablses than recipes.The first few tips are lessons about the user's repertoire,yet without guidance it was years befor i came to realize this on my own.
+It is for this reason that I ame excited about the publication of Practical Vim.Because now when Vim novices ask me what's the next step.I know what to tell them.After all, Practial Vim Even taught me a few things.
+TimePope
+Vim core contributor
+April 2012
+Practical Vim is or programmers who want to rasise their game.You've heard iit said that in the hands of an expert,Vim shhreds text at hte speed of thought.Reading this book is your next step toward thatend.
+Prctical Vim is a fast track to Vim mastery. It won't hold you byhe hand,but beginners can find the prerequisite knowledege by running throught the Vim tutor, and interactive lesson distributed wit Vim.Practical Vim builds on this foundation by highlighting core concepts and demonstrating iiomatic usag
+Master j
+interactive lesson distributed with Vim.Pratical Vim builds on this gounation by ighlihgting core concepts and demonstrating idiomatic usage.
+Vim is highly configurable.however,customizationis a personal thing,so i've tried to avoid recommending what shoudld or shourld not go ino your vimrc file.Instead,Practical Vim focuses on the core functionality of the editor ！！the stuff that's always there, wheter your're working over SSh on a remote server or using a local instance of Gvim ,with plugins installed to add extra functionality.Master Vimm''''''''''''''''u'
+Master Vim's core,and you'll gain porable access to a text editing powertool.
+how thsi ook is structured 
+ractical Vim is a recipe book. It's not designed to be read from start to finish.20*40 + (20 * 40 ) + 20 (20 + 3 ) * 40 / 20 - 40 / 20 * 10 +
+chen463716140@gmail.com
+(I mean ti ! At the start of the next chapter,I'll advise you to skit it and jump straight to the action.)Each chapter is a collection of tips that are related by a theme, and each tip demonstrates a particular feature i action. Some tips are self-contained.Others depend upon material elsewhere in the book. Those tips are cross-referenced so you can find everything easily.
+Practical Vim doesn't progress frome novice to advanced level, but each individual chapter does.A less-experienced reader might prefer to make a first pass throught the book,reading just the early tips in each chapter.A more advanced reader might choose to focus on the later tips or move around the book as needed.
+A Note on the Examples 
+In Vim,there's always more than one way to complete any given task. For example,in Chapter 1, The Vim Way, on page 1, all of the problems are designed to illustrate an application of the dot command, but evry one of them could also be solved using the :sbsitute command.
+On seeing my solution,you might think yourslf,"Wouldn't it be quicker to do it this.
+On seeing my solution, you might think to yourself,"Wouldn't it be quicker to do it this way?"And you may well be right!My solutions illustrate a particular technique.Look beyond their simplicity,and try to find a resemblance to the problems that you face daily.That's where these techniques will save you time.
+Learn to touch Type,Then Learn Vim
+If you have to look down to find the keys on the key board,the benefits of learning Vim won't come fast.Learning to touch type is imperative.
+Vim traces its ancestry back to the classic Unix editors,vi and ed(see On the Etymology of Vim(and Family),on page 53 ).These predate the mouse and all of the point-and-click interfaces that came with it.In Vim,everything can bedone with the keyboard.For the touch pist,that means Vim does everything faster.
+Read the Forgotten manual
+In Practical Vim ,Idemonstrate By showing examples rather than by describing them.That's noot easy to do with the written word.To show the steps taken during an interactive editing session.I've adoped a simple notation that illustrates the keystrokes and the contents of a Vim buffer side by side.
+If your're keen to jum to the action,you can safely sskip this chapter for now.It describes each of the conventions used throughtout Practical Vim,many of which you'll find to be self-eplanatory.At some point,you'll probably come across a symbol and wonder what is stands for.When that happens,trunback and consult this chapter for the answer.
+Get to Konw Vim's Built-in Documentation
+The best way to gt to know Vim's documentation is by spending time in it.To help out ,I've included"hyperlnks" for entries in Vim's documentatin.
+For example,here's the"hyperlink" for the Vim tutor: :h vimturor.
+The icon has a dualfunction.First, it serves as a signpost,drawing the eye to these helpful references.Second,if you're reading this on an electronic device that's connected to the Internet,you can click the icon and it will take you to the relevant entry int Vim's online documentation. Inthis sense, it truly is a hyperlink.
+But what if you're reading the pater edition of the book? Not to worry.If you have an installation of Vim within reach,simply enter the command as it appears in front of the icon.
+For example,type:h vimtutor(:h is an abbreviation for the :help command).Consider this a uniue address for the documentation on vimtutor: a URL of sorts.In this sense,the help reference is a kind of hyperlink to Vim's built in documentation.
+Notation for Sumulation Vim on the Page 
+Vim's modal interface sets it apart from most other text editors.To make a musical analogy,let's compare the Qwerty and piano keyboards.A pianist can pick out a melody by playing one noete at a time or he or she can hold down several keys at once to sound achord. In most text editors,keyboard shortcuts are triggered by pressing a key hile holding down one or more modifier butttons,such as thcontrol and command keys.This is the Qwerty exquivalent of playing a chord on the piano keyboard.
+Some of Vim'scommands are also triggered by playing chords,but Normal mode acommands are designed to be typed as seuence of keystrokes.It's the Qwerty equivalent of playing a melody on the piano keyboard.
+Ctrl-s is a common convnrtion for representing chordal key commands.It means "Press the Control ky and the s key at the same time." But this convention isn't well suited to describing Vim's modal command set. In this section, we'll meet the notation used throughout Prctical Vim to ilustrate Vim usage.
+Playing Melodies 
+In Noraml mode, er compose commands by typing one or more keystrokes in wuence.These commans appear as follows:
+Notation Meaning
+X   Press X once
+dw In sequences,press d,the w
+dap In sequence, press d, a ,then p
+Most of these sequences involve two or three key strokes,but some are longer.Deciphering the meaning of Vim's Normal mode command sequences can be challenging, but you'llget better at it with pracitce.
+Playing Chords
+When you see a keystroke such as <C-P>,it doesn't mean "Press <,then C,then-,and so on." The <C-p> notation is wquivalent to Ctrl-p,which means "Press the <Ctrl> and p keys at the same time."
+I didn't choose this notations without good reason. Vim's documentation sues it (:h key-notation), and we can also use it in defining custom key mappings.Some of Vim's commands are formed by combining chords and keystrokes in sequence,and this notation handles them well.Consider these examples:
+Notation Meaning
+<C-n>  Press<Ctrl> and n at the same time
+g<C-]> Press g,followed by <Ctrl>and ] at the same time
+<C-r>0 Press <Ctrl> and r at some time, the 0
+<C-w><C-=>Press<Ctrl>and w at the ame time,the <Ctrl>and = at the same time
+Placeholders
+Many of vim's commands require two or more keystrokes to be entered in sequence.Some commands must be followed by a particular kind of keystroke, while other commands can be followed by any key on the keyboard. I use curly braces to denote the set of valid keystroke that can follow a command. Here are some examples:
+Noation     Meaning
+f{char} Press f,followed y any other character
+`{a-z}  Press `,followed by any lowercase letter
+m{a-zA-Z}   Press m, followed by any lowercase or uppercase letter
+d{motion}   Press d,followed by any motion command
+<C-r>{register} Press<Ctrl>and r at the same time,followed by the address ofa register.
+Showing Special Keys
+Some keys are called by name.This table shows a selection of them:
+Notation Meaning 
+<Esc>   Press the Escape key 
+<CR>    Press the carriage return key (also known as <Enter>)
+<Ctrl> Press the Control Key 
+<Tab>   Press the Tab key 
+<Shift> Press the Shift key
+<S-Tab> Press the <Shift>and <Tab>keys at the same time
+<Up>    Press the up arrow key
+<Down>  Press the down arrow key
+    Press the space bar
+Note that the space bar is represented as  . This could be combined with thef{char} command to frome f .
+Switching Modes Midcommand
+When operating Vim,it's common to switch from Normal to Insert mode and backagain. Each keystroke could mean something different,depending on which mode is active.I've used an alternative style to represent keystrokes entered in Insert mode,which makes it easy to differentiate them from Nomal mode keystrokes.
+Consider this example: Cw replacement<Esc>. The Noraml mode cw command
+deletes to the end of the current word an swiches to Insert mode.Then we tpe hte word"replacement" in Insert mode and press <Esc> to switch back to Normal mode again.
+The Normal mode styling is also used for Visual mode keystrokes,while the Insert mode styling can indicate keystrokes entered in Command-Line mode and Replaces mode.Which mode is active should be clear form context.
+Interacting with the Command Line 
+In some tips we'll execute a command line,either in the shell or from inside Vim. This is what it looks like when we execute the grep command inth eshell:
+
+$ grep -n Waldo *
+ANd this si how it looks when we execute Vim's built-in:grep command:
+:grep Waldo *
+In Practical Vim, the $ symbol indicates that a command line is to be executed in an external shell, whereas the : prompt indicates that the command line is to be executed internally from Command-Line mode.Occasionally we'll see other prompts,,including these:
+Prompt  Meaning
+$   Enter the command line in an external shell
+:   Use Command-Line mode to execute an Ex command
+/   Use Command-Lnine mode to perform a forward search
+? User Command-Line mode to perform a backward search
+=   User Command-Line mode to evaluate a Vim script expression
+Any time you see an Ex command listed inline ,such as :swrite,you can assume that the <CR>key is pressed to execte the command.Nothing happends otherwise,so you can consider <CR> to be implicit.
+By contrast,Vim's search command allows us to preview the first match befor pressing <CR>(see Tip81monpage 202). When you see a search command listed inline,such as /pattern<CR>,the <Cr>keystroke is is listed explicitly.If the <CR>is omitted,that's intentional,and it means you shouldn't ress the Enter key just yet.
+Showing the Cursor Position in a Buffer
+When showing the contents of a buffer,it's useful to be able to indicate where the cursor is positioned.Inthis example, you should see that the cursor is placed on the first letter of the word "One":
+One two three
+When we make a change that involves several steps, the contetns of the buffer pass through inermediate states. To illustrate the process,I use a table showing the commands executed in the left column and the contens of the buffer in the right column.Here;s a simple example:
+Keystrokes Buffer Contents
+{start} One two three
+dw  two three
+In row 2 we run the dw command to delete the word under the cursor.We can see how the buffer looks immediately after running this command by lokking at hte contents of the buffer in the same row.
+Highlinghting Search Matches
+When demostrating Vim's search command ,it's helpfulto be able to hightlight any matches that occur in th buffer.In this example,searching for the string "the" causes four occurrences of the pattern to be highlighted:
+Keystrokes Buffer Contents
+{start} the problem with these new recruits is that they don't keep their boots clean.
+/the<CR> the problem withc these new recruits is that they don't kepp their bots clean.
+Selecting Text in Visual Mode
+visual mode allows us to select text in the buffer and then operate on the selection.In this example, we use the it text object to select the contents of the <a> tag:
+keystrokes  Buffer Contents
+{start} <a href="http://pragprog.com/dnvim/">Practical Vim</a>
+vit <a href="http://pragprog.com/dnvim/">Practical Vim</a>
+Note that hte styling for a Visual selection si the same for hightlighted search matches.When you see this style,it should be clear from context whether it represents a search match or a Visual selection.
+Downloading the Examples 
+The examples in Practical Vim usually begin by showing the contents of a file before we change it .These code listings include the file path:
+marcrs/incrementtal.txt
+partridge in a pear tree
+trutle doves
+French hens
+calling birds
+golden rings
+Each time you see a file listed with its file path in this manner,it means that you can download the example. I recommend that you open the file in Vim and try out the exerciese for yourself.It's the best way to learn!
+To follow along,download all the exmaples and source code frome the Pragmatic Bookshelf.If your're reading on an electronic device that's connected to the Internet, you can also fetch each file one by one by clicking on the filename.Try it with the example above.
+Use Vim's Factroy Settings
+Vim is highly configurable.If you don't like the defaults,then you can change them.That's a good thing,but it could cause confusion if you follow the examples in this book using a customized version of Vim. You may find that some things don't work for you the way that they are described in the text .If you suspect that your customizations are cuaing inerferences, hrer's a quciktest.Try quitting Vim and the launching it with these options:
+$vim -u NONE -N
+
