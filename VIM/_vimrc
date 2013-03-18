@@ -65,7 +65,7 @@ let g:user_zen_settings = {
 Bundle 'AutoComplPop'
 "迄今位置最好的自动VIM自动补全插件了吧
 "Vundle的这个写法，是直接取该插件在Github上的repo
-Bundle 'Valloric/YouCompleteMe'
+"Bundle 'Valloric/YouCompleteMe'
 
 map <F8> :WMToggle<cr>
 "必不可少，在VIM的编辑窗口树状显示文件目录
@@ -92,7 +92,6 @@ endif
 "Change Buffer - without saving
 "窗口大小相等
 set equalalways
-set autochdir
 set hid
 set nu
 set autochdir "自动切换目录为当前目录
@@ -116,6 +115,7 @@ set cmdheight=2
 
 set backspace=indent,eol,start
 set ruler
+
 set showcmd
 "Toggle Menu and Toolbar
 set guioptions-=m
