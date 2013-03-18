@@ -1,53 +1,215 @@
 set nocompatible
 source $VIMRUNTIME/vimrc_example.vim
-source $VIMRUNTIME/mswin.vim
-behave mswin
+"source $VIMRUNTIME/mswin.vim
+"behave mswin
+"插件设置
+filetype off " required!
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+"Bundle
+Bundle 'gmarik/vundle'
+Bundle 'fugitive.vim'
+set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
+"Bundle 'SuperTab-continued.'
+"Bundle 'ctags.exe'
+"let Tlist_Ctags_Cmd='~\.vim\bundle\ctags.exe'
+"Bundle 'taglist.vim'
+"Bundle 'taglist-plus'
+"let Tlist_Show_One_File=1
+"let Tlist_Exit_OnlyWindow=1
+"JS代码格式化插件；
+Bundle '_jsbeautify'
+nnoremap <leader>_ff :call g:Jsbeautify()<CR>
+Bundle 'minibufexplorerpp'
+let g:miniBufExplMapCTabSwitchBufs=1
+let g:miniBufExplMapWindowNavVim=1
+let g:miniBufExplMapWindowNavArrows=-1
+"Bundle 'bufexplorer.zip'
+Bundle 'winmanager'
+let g:winManagerWindowLayout='FileExplorer'
+"代码块"
+"Cscope
+"Bundle 'Cscope'
+"在输入()，""等需要配对的符号时，自动帮你补全剩余半个
+Bundle 'AutoClose'
+"用全新的方式在文档中高效的移动光标，革命性的突破
+Bundle 'EasyMotion'
+let mapleader=','
+"Bundle 'snipMate'
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+let g:UltiSnipsUsePythonVersion = 2
+"让NERDTree不缩放 在关闭Buffer时候
+Bundle 'bufkill.vim'
+
+Bundle 'jQuery'
+"Bundle 'ZenCoding.vim'
+let g:user_zen_settings = { 
+  \  'indentation' : '  ', 
+  \  'perl' : { 
+  \    'aliases' : { 
+  \      'req' : 'require ' 
+  \    }, 
+  \    'snippets' : { 
+  \      'use' : "use strict\nuse warnings\n\n", 
+  \      'warn' : "warn \"|\";", 
+  \    } 
+  \  } 
+  \} 
+  let g:user_zen_expandabbr_key = '<c-return>'   "设置为ctlr+回车 扩展 
+  let g:use_zen_complete_tag = 1
+Bundle 'AutoComplPop'
+"迄今位置最好的自动VIM自动补全插件了吧
+"Vundle的这个写法，是直接取该插件在Github上的repo
+"Bundle 'Valloric/YouCompleteMe'
+
+map <F8> :WMToggle<cr>
+"必不可少，在VIM的编辑窗口树状显示文件目录
+Bundle 'The-NERD-tree'
+map <F10> :NERDTreeToggle<CR>
+let NERDTreeShowBookmarks=1
+let NERDTreeShowFiles=1
+let NERDTreeShowHidden=1
+let NERDTreeIgnore=['\.$','\~$']
+let NERDTreeShowLineNumbers=1
+"Bundle 'jQuery'
+filetype plugin indent on
+"最大化
+if has('gui_running') && has("win32")
+    au GUIEnter * simalt ~x
+endif
+
 "我的配置开始
+"基本配置
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => VIM userinterface
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+"Change Buffer - without saving
+"窗口大小相等
+set equalalways
+set autochdir
+set hid
+set nu
+set autochdir "自动切换目录为当前目录
+set shortmess=atI
+syntax on
+"Ignore case when searching
+set ignorecase
+set incsearch
+let g:LookupFile_MinPatLength = 2
+"Highlight search thing
+set hlsearch
+"在输入命令时列出匹配项目，也就是截图底部的效果
+set wildmenu
+"Bbackspace and cursor keys wrap to
+set whichwrap=b,s,<,>,[,] 
+set numberwidth=4 
+"autocmd! bufwritepost _vimrc source % "自动载入配置文件不需要重启
+"The commandbar is 2 high
+set cmdheight=2
 
 set backspace=indent,eol,start
 set ruler
 set showcmd
+"Toggle Menu and Toolbar
+set guioptions-=m
+set guioptions-=r
+set guioptions-=T
+map <silent> <F2> :if &guioptions =~# 'T' <Bar>
+        \set guioptions-=T <Bar>
+        \set guioptions-=m <bar>
+    \else <Bar>
+        \set guioptions+=T <Bar>
+        \set guioptions+=m <Bar>
+    \endif<CR>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Moving around and tab
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"Map space to / and c-space to ?
+"Switching between buffers.   
+"imap <tab> <c-x><c-o> 
+"使用tab键来代替%进行匹配跳转
+"修改leader键为逗号
+inoremap <F1> <ESC>
+nnoremap <F1> <ESC>
+vnoremap <F1> <ESC>
+
+"Smart way to move btw. window
+
+"使用tab键来代替%进行匹配跳转
+"nnoremap <tab> %
+"vnoremap <tab> %
+
+"取消粘贴缩进
+nmap <leader>p :set paste<CR>
+nmap <leader>pp :set nopaste<CR>
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => G:eneral Autocommand
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+
+"Switch to current dir
+map <leader>cd :cd %:p:h<cr>
 
 "颜色设置
 set t_Co=256
 set background=dark
-colorscheme slate
+colorscheme desert
 syntax enable
-filetype plugin indent on
 "}
 "tab setting{
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 set expandtab
+set smarttab
+set nobackup
 "}
 "字体设置{
-set gfn=Bitstream_Vera_Sans_Mono:h10:cANSI
+set encoding=utf-8
+set fileencoding=utf-8
+set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
+"终端乱码，菜单乱码
+language messages zh_CN.utf-8
+source $VIMRUNTiME/delmenu.vim
+source $VIMRUNTiME/menu.vim
+"特殊字符 笑脸
+set ambiwidth=double
+set helplang=cn
+set guifont=Microsoft_Yahei_Mono:h10
 "set fileencoding=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
-set gfw=幼圆:h10.5:cGB2312
+"set gfw=幼圆:h10.5:cGB2312
 "}
-set diffexpr=MyDiff()
-function MyDiff()
-  let opt = '-a --binary '
-  if &diffopt =~ 'icase' | let opt = opt . '-i ' | endif
-  if &diffopt =~ 'iwhite' | let opt = opt . '-b ' | endif
-  let arg1 = v:fname_in
-  if arg1 =~ ' ' | let arg1 = '"' . arg1 . '"' | endif
-  let arg2 = v:fname_new
-  if arg2 =~ ' ' | let arg2 = '"' . arg2 . '"' | endif
-  let arg3 = v:fname_out
-  if arg3 =~ ' ' | let arg3 = '"' . arg3 . '"' | endif
-  let eq = ''
-  if $VIMRUNTIME =~ ' '
-    if &sh =~ '\<cmd'
-      let cmd = '""' . $VIMRUNTIME . '\diff"'
-      let eq = '"'
-    else
-      let cmd = substitute($VIMRUNTIME, ' ', '" ', '') . '\diff"'
-    endif
-  else
-    let cmd = $VIMRUNTIME . '\diff'
-  endif
-  silent execute '!' . cmd . ' ' . opt . arg1 . ' ' . arg2 . ' > ' . arg3 . eq
-endfunction
+
+"直接在vim中输入run 调用浏览器访问页面  
+function! ViewInBrowser(name)   
+    let file = expand("%:p")   
+    exec ":update " . file   
+    let l:browsers = {   
+        \"cr":"d:/WebDevelopment/Browser/Chrome/Chrome.exe",   
+        \"ff":"d:\Program Files\mozilla firefox\core\firefox.exe -turbo",   
+        \"op":"d:/WebDevelopment/Browser/Opera/opera.exe",   
+        \"ie":"c:/progra~1/intern~1/iexplore.exe",   
+        \"ie6":"D:/WebDevelopment/Browser/IETester/IETester.exe -ie6",   
+        \"ie7":"D:/WebDevelopment/Browser/IETester/IETester.exe -ie7",   
+        \"ie8":"D:/WebDevelopment/Browser/IETester/IETester.exe -ie8",   
+        \"ie9":"D:/WebDevelopment/Browser/IETester/IETester.exe -ie9",   
+        \"iea":"D:/WebDevelopment/Browser/IETester/IETester.exe -all"   
+    \}   
+    let htdocs='C:\\AppServ\\www\\'  
+    let strpos = stridx(file, substitute(htdocs, '\\\\', '\', "g"))   
+    if strpos == -1   
+       exec ":silent !start ". l:browsers[a:name] ." file://" . file   
+    else   
+        let file=substitute(file, htdocs, "http://localhost:81/", "g")   
+        let file=substitute(file, '\\', '/', "g")   
+        exec ":silent !start ". l:browsers[a:name] file   
+    endif  
+endfunction    
+":command Runie call ViewInBrowser("ie")  
+
+
 
