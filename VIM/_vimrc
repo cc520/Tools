@@ -6,7 +6,6 @@ source $VIMRUNTIME/vimrc_example.vim
 filetype off " required!
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
-"Bundle
 Bundle 'gmarik/vundle'
 Bundle 'fugitive.vim'
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
@@ -20,6 +19,7 @@ set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 "JS代码格式化插件；
 Bundle '_jsbeautify'
 nnoremap <leader>_ff :call g:Jsbeautify()<CR>
+Bundle 'The-NERD-Commenter'
 Bundle 'minibufexplorerpp'
 let g:miniBufExplMapCTabSwitchBufs=1
 let g:miniBufExplMapWindowNavVim=1
@@ -27,6 +27,8 @@ let g:miniBufExplMapWindowNavArrows=-1
 "Bundle 'bufexplorer.zip'
 Bundle 'winmanager'
 let g:winManagerWindowLayout='FileExplorer'
+"解放生产力的神器，简单配置，就可以按照自己的风格快速输入大段代码。已安装
+"Bundle 'UltiSnips' 
 "代码块"
 "Cscope
 "Bundle 'Cscope'
@@ -94,6 +96,7 @@ set hid
 set nu
 set autochdir "自动切换目录为当前目录
 set shortmess=atI
+set noswapfile
 syntax on
 "Ignore case when searching
 set ignorecase
@@ -112,11 +115,14 @@ set cmdheight=2
 
 set backspace=indent,eol,start
 set ruler
+
 set showcmd
 "Toggle Menu and Toolbar
 set guioptions-=m
-set guioptions-=r
 set guioptions-=T
+"去除左右两边的滚动条
+set go-=r
+set go-=L
 map <silent> <F2> :if &guioptions =~# 'T' <Bar>
         \set guioptions-=T <Bar>
         \set guioptions-=m <bar>
@@ -125,9 +131,7 @@ map <silent> <F2> :if &guioptions =~# 'T' <Bar>
         \set guioptions+=m <Bar>
     \endif<CR>
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Moving around and tab
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "Map space to / and c-space to ?
 "Switching between buffers.   
 "imap <tab> <c-x><c-o> 
@@ -146,9 +150,7 @@ vnoremap <F1> <ESC>
 "取消粘贴缩进
 nmap <leader>p :set paste<CR>
 nmap <leader>pp :set nopaste<CR>
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => G:eneral Autocommand
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 
 "Switch to current dir
