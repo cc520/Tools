@@ -9,11 +9,10 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 Bundle 'fugitive.vim'
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
-"Bundle 'SuperTab-continued.'
-Bundle 'ctags.exe'
-Bundle 'taglist.vim'
-"Bundle 'taglist-plus'
-let tlist_js_settings='javascript;s:string;a:array;o:object;f:function'
+Bundle 'supertab'
+"Bundle 'taglist.vim'
+Bundle 'Visual-Mark'
+Bundle 'taglist-plus'
 "taglist{
     let Tlist_Show_One_File = 1            "只显示当前文件的taglist，默认是显示多个
     let Tlist_Exit_OnlyWindow = 1          "如果taglist是最后一个窗口，则退出vim
@@ -21,28 +20,35 @@ let tlist_js_settings='javascript;s:string;a:array;o:object;f:function'
     let Tlist_GainFocus_On_ToggleOpen = 1  "打开taglist时，光标保留在taglist窗口
     "设置关闭和打开taglist窗口的快捷键
     "}
-let Tlist_Ctags_Cmd='~\.vim\bundle\ctags.exe\ctags.exe'
-nnoremap <F5> :Tlist<CR>
+let Tlist_Ctags_Cmd='d:\ctags58\ctags.exe'
+nnoremap <F5> :TlistToggle<CR>
+let tlist_js_settings='javascript;s:string;a:array;o:object;f:function'
 "let Tlist_Show_One_File=1
 "let Tlist_Exit_OnlyWindow=1
 "JS代码格式化插件；
 Bundle '_jsbeautify'
 nnoremap <leader>_ff :call g:Jsbeautify()<CR>
 Bundle 'The-NERD-Commenter'
+
 Bundle 'minibufexplorerpp'
-let g:miniBufExplMapCTabSwitchBufs=1
+let g:miniBufExplMapCTabSwitchBufs=2
 let g:miniBufExplMapWindowNavVim=1
-let g:miniBufExplMapWindowNavArrows=-1
+"let g:miniBufExplMapWindowNavArrows=-1
 "Bundle 'bufexplorer.zip'
-Bundle 'winmanager'
-let g:winManagerWindowLayout='FileExplorer'
+"let g:winManagerWindowLayout='FileExplorer'
 "解放生产力的神器，简单配置，就可以按照自己的风格快速输入大段代码。已安装
 "Bundle 'UltiSnips' 
 "代码块"
 "Cscope
 "Bundle 'Cscope'
 "在输入()，""等需要配对的符号时，自动帮你补全剩余半个
-Bundle 'AutoClose'
+"Bundle 'AutoClose'
+Bundle 'delimitMate.vim'
+Bundle 'neocomplcache'
+let g:neocomplcache_enable_at_startup = 1
+Bundle 'ctrlp.vim'
+let g:ctrlp_map = '<c-p>'
+Bundle 'vim-surround'
 "用全新的方式在文档中高效的移动光标，革命性的突破
 Bundle 'EasyMotion'
 let g:EasyMotion_leader_key = '<Leader><Leader>'
@@ -68,9 +74,9 @@ let g:user_zen_settings = {
   \    } 
   \  } 
   \} 
-  let g:user_zen_expandabbr_key = '<c-return>'   "设置为ctlr+回车 扩展 
+  let g:user_zen_expandabbr_key = '<F9>'   "设置为ctlr+回车 扩展 
   let g:use_zen_complete_tag = 1
-Bundle 'AutoComplPop'
+"Bundle 'AutoComplPop'
 "迄今位置最好的自动VIM自动补全插件了吧
 "Vundle的这个写法，是直接取该插件在Github上的repo
 "Bundle 'Valloric/YouCompleteMe'
@@ -146,14 +152,15 @@ set guioptions-=T
 "去除左右两边的滚动条
 set go-=r
 set go-=L
-map <silent> <F2> :if &guioptions =~# 'T' <Bar>
-        \set guioptions-=T <Bar>
-        \set guioptions-=m <bar>
-    \else <Bar>
-        \set guioptions+=T <Bar>
-        \set guioptions+=m <Bar>
-    \endif<CR>
-
+"
+"map <silent> <F6> :if &guioptions =~# 'T' <Bar>
+"       \set guioptions-=T <Bar>
+"       \set guioptions-=m <bar>
+"   \else <Bar>
+"       \set guioptions+=T <Bar>
+"       \set guioptions+=m <Bar>
+"   \endif<CR>
+"
 " => Moving around and tab
 "Map space to / and c-space to ?
 "Switching between buffers.   

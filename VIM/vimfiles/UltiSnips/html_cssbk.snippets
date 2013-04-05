@@ -16,8 +16,12 @@ snippet background "background-attachment: scroll:fixed (background)"
 background-attachment: ${1:scroll/fixed};$0
 endsnippet
 
-snippet bgcl "background-color:  color-hex (background)"
+snippet background "background-color:  color-hex (background)"
 background-color: #${1:DDD};$0
+endsnippet
+
+snippet background "background-color:  color-name (background)"
+background-color: ${1:red};$0
 endsnippet
 
 snippet background "background-color:  color-rgb (background)"
@@ -28,20 +32,24 @@ snippet background "background-color:  transparent (background)"
 background-color: transparent;$0
 endsnippet
 
-snippet bgimgn "background-image:  none (background)"
+snippet background "background-image:  none (background)"
 background-image: none;$0
 endsnippet
 
-snippet bgimg "background-image:  url (background)"
+snippet background "background-image:  url (background)"
 background-image: url($1);$0
 endsnippet
 
-snippet bgp "background-position:  position (background)"
+snippet background "background-position:  position (background)"
 background-position: ${1:top left/top center/top right/center left/center center/center right/bottom left/bottom center/bottom right/x-% y-%/x-pos y-pos};$0
 endsnippet
 
-snippet bgr "background-repeat:  r:r-x:r-y:n-r (background)"
+snippet background "background-repeat:  r:r-x:r-y:n-r (background)"
 background-repeat: ${1:repeat/repeat-x/repeat-y/no-repeat};$0
+endsnippet
+
+snippet background "background:  color image repeat attachment position (background)"
+background:${6: #${1:DDD}} url($2) ${3:repeat/repeat-x/repeat-y/no-repeat} ${4:scroll/fixed} ${5:top left/top center/top right/center left/center center/center right/bottom left/bottom center/bottom right/x-% y-%/x-pos y-pos};$0
 endsnippet
 
 snippet border "border-bottom-color: size style color (border)"

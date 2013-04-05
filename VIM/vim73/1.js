@@ -15,9 +15,15 @@ function howToDo (argument) {
     return a + 1;
 }
 $('#abc').change(function (e) {
-    e.preventDefault().change(function (e) {
-        e.preventDefault();
-    }.
+    $('somequery').click(function(event) {
+       somequery.click(function(event) {
+           e.preventDefault();
+       });
+    })
+    somequery.change(function (e) {
+    })
+})  
+$('somequery').click(function(event) {
 })
 $('somequery').click(function(event) {
     var $self = $(this);

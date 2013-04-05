@@ -1,0 +1,4 @@
+Vim's Conventins for "i" and "a" keys
+Vim has a couple of vontentions for switching from Normal to Insert mode . The i and a commands both do it,positioning the cursor in front of or after the current charcter,respecively.The I and A commands behave similarly,except that they posiion the cursor at the start or end of the current line.
+Vim follow s similar conventions for swiching from Visual-Block to Insert mode.The I and A commands both do it,pacing the cursor at the start or end of the selection,respectively .So what about hte iand a comands; what do they od in Visual mode?
+In visual and Operator-Pending modes the i and a keys follow a different convention:

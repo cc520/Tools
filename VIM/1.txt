@@ -126,3 +126,10 @@ Kana Natsuno's textobj-entire plugin is a good example.It adds two next tet obje
 If we wanted to autoindent the entire file using the = command,we could run gg=G (that is ,gg to jump to the top of he file and the =G to autoindent everything from the cursor position to the end of the file). But if we had the textobj-entire plugin installed,we could simply run =ae.It wouldn't matter where our cursor was when we ran this command;it would always act upon the entire file.
 Note that if we had both the commentary and textobj-entire plugins installed.we could use them together.Running \\ae would toggle commenting ghroughout the currnet file.
 If you're curious about howto create your won custom motions,start by reading :h omap-info.
+    
+(hello)
+<a href="###">one</a>
+li.one a{backgournd-image:url('./images/sprit.png');}
+li.two a{backgournd-image:url('./images/sprit.png');}
+li.three a{backgournd-image:url('./images/sprit.png');}
+li.four a{backgournd-image:url('./images/sprit.png');}
